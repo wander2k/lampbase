@@ -1,0 +1,15 @@
+version: '2'
+services:
+  web:
+    build: ./web
+    ports:
+      - "8000:80"
+      - "3000:3000"
+    links:
+      - memcached
+    volumes:
+      - ./src/yourgreatapp/public:/var/www/yourgreatapp/public
+
+
+  memcached:
+    image: memcached
