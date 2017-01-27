@@ -3,6 +3,7 @@ class News_model extends CI_Model {
    public function __construct()
    {
       $this->load->database();
+      $this->output->enable_profiler(TRUE);
    }
 
    public function get_news($slug = FALSE)

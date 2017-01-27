@@ -10,6 +10,7 @@ class News extends CI_Controller
 
     public function view($slug = null)
     {
+        $slug = urldecode($slug);
         $data['news_item'] = $this->news_model->get_news($slug);
 
         if (empty($data['news_item'])) {
