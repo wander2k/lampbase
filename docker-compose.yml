@@ -36,4 +36,13 @@ services:
        - 8880:80
     volumes:
        - /sessions
-      
+# postgres ------------------------------------------
+  postgre:
+    restart: always
+    image: postgres:8.4
+    environment:
+      - POSTGRES_PASSWORD=password
+    ports:
+      - "5432:5432"
+    volumes:
+      - /srv/docker/postgresql:/var/lib/postgresql
